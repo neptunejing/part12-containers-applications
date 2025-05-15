@@ -1,0 +1,26 @@
+docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+test> use the_database
+the_database> db.todos.insertOne({
+...   text: "Increase the number of tools in my tool belt",
+...   done: false
+... })
+the_database> db.todos.find()
+...
+[
+  {
+    _id: ObjectId('6825c3b649a5c8788165d0fb'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6825c3b649a5c8788165d0fc'),
+    text: 'updated!',
+    done: true
+  },
+  {
+    _id: ObjectId('6825c91f9db05d1ab065d0fb'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+exit
