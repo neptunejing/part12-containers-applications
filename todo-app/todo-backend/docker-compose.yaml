@@ -4,3 +4,5 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      - MONGO_URL=mongodb://the_username:the_password@mongo:3456/the_database
